@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+          max-width: 85%;
+          margin: 20px auto;
+        }
+        
+        .container .title {
+          font-size: 20px;
+          background-color: #000;
+          color: #fff;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          padding: 8px;
+          display: flex;
+          justify-content: space-between;
+        }
+        
+        .posts {
+          columns: 5 100px;
+          gap: 15px;
+          height: fit-content;
+        }
+        .post{
+            position: relative;
+            margin: 5px;
+            background: rgb(228, 185, 100);
+            padding: 5px;
+            height: fit-content;
+        }
+        
+        .post img {
+          margin-bottom: 10px;
+          border-radius: 5px;
+          width: 100%;
+          aspect-ratio: 1/1;
+        }
+        .action{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        
+        a{
+            text-decoration: none;
+            background: rgb(65, 177, 218);
+            color: #fff;
+            border-radius: 5px;
+            padding: 3px 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h3>Dashboard</h3>
+            <a href="/add-post">Add Post</a>
+        </div>
+
+        <div class="posts">
+            {%  for post in posts %}
+            {% set image = "uploads/" + post.image %}
+            <div class="post">
+                <img src="{{ url_for('static', filename=image)}}" alt="">
+                <div class="action">
+                    <a href="/edit-post/{{post.id}}">Edit</a>
+                    <a href="/delete/{{post.id}}">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</body>
+</html>

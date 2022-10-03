@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Add Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload-content.css')}}">
+  </head>
+  <body>
+    <div class="center">
+      <form class="form-input" action="/add-post" method="post" enctype = "multipart/form-data">
+        <div class="preview">
+          <img id="file-ip-1-preview" />
+        </div>
+        <label for="file-ip-1">Upload Image</label>
+        <input
+          class="file"
+          type="file"
+          id="file-ip-1"
+          accept="image/*"
+          onchange="showPreview(event);"
+          name="image"
+        />
+        <center>
+          <textarea name="content" cols="30" rows="10"></textarea>
+          <div>
+            <button type="submit">POST</button>
+          </div>
+        </center>
+      </form>
+    </div>
+    <script type="text/javascript">
+      function showPreview(event) {
+        if (event.target.files.length > 0) {
+          var src = URL.createObjectURL(event.target.files[0]);
+          var preview = document.getElementById("file-ip-1-preview");
+          preview.src = src;
+          preview.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
