@@ -9,6 +9,14 @@ You must have installed latest version of python and pip.
 
 Open cmd
 
+Clone the repository
+    
+    git clone https://github.com/Shubham-Choudhury/Dynamic-Image-Gallary.git
+
+Change directory to Dynamic-Image-Gallary
+    
+    cd Dynamic-Image-Gallary
+
 Install Virtualenv
     
     pip install virtualenv
@@ -20,14 +28,6 @@ Create a virtual environment
 Activate the virtual environment
 
     venv\Scripts\activate
-
-Clone the repository
-    
-    git clone https://github.com/Shubham-Choudhury/Dynamic-Image-Gallary.git
-
-Change directory to Dynamic-Image-Gallary
-    
-    cd Dynamic-Image-Gallary
 
 Install all the requirements
         
