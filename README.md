@@ -31,10 +31,19 @@ Activate the virtual environment
 
 Install all the requirements
         
-        pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Run the app
 
     python app.py
 
+** Open your browser and go to http://127.0.0.1:5000/ **
+
+## **Admin Panel**
+
+To access the admin panel go to http://127.0.0.1:5000/login
+
+Username / Email: admin@example.com
+
+Password: admin
 
