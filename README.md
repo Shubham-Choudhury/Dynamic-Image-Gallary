@@ -23,7 +23,7 @@ Install Virtualenv
 
 Create a virtual environment
     
-        virtualenv venv
+    virtualenv venv
 
 Activate the virtual environment
 
